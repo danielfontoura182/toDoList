@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>toDoList - Add, Edit, Delete and Check Completed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/main.min.css" />
+  </head>
+  <body>
+    <div class="title">
+      <h1 class="title__primary">
+        <span id="to">to</span><span id="do">Do</span
+        ><span id="list">List</span>
+      </h1>
+      <h2 class="title__secondary">Add, Edit, Delete and Check Completed</h2>
+    </div>
+
+    <form class="input-container">
+      <div class="todo-item__container">
+        <label for="todo-item">Your To Do:</label>
+        <input
+          type="text"
+          class="todo-item"
+          id="todo-item"
+          placeholder="Your To Do"
+        />
+      </div>
+      <div class="deadline__container">
+        <label for="todo-date" class="label-date">Deadline:</label>
+        <input
+          type="date"
+          class="todo-date"
+          id="todo-date"
+          placeholder="Deadline"
+        />
+      </div>
+      <div class="category__container">
+        <label for="category__select" class="category__select">Category:</label>
+        <select name="category" id="category__select">
+          <option value="personal">Personal</option>
+          <option value="professional">Professional</option>
+          <option value="study">Study</option>
+        </select>
+      </div>
+      <button class="add">Add To Do &RightArrow;</button>
+    </form>
+    <div class="list-container">
+      <div class="personal">
+        <h2 class="list-container__title">Personal</h2>
+        <button class="manage manage__personal">Manage List</button>
+        <ul class="list-container__list">
+          <li>
+            Go to the barbershop - <span class="item-date">10/11/2021</span>
+          </li>
+          <li>
+            Play soccer with friends - <span class="item-date">07/11/2021</span>
+          </li>
+          <li>
+            Go to the cinema with girlfriend -
+            <span class="item-date">08/11/2021</span>
+          </li>
+        </ul>
+      </div>
+      <div class="professional">
+        <h2 class="list-container__title">Professional</h2>
+        <button class="manage manage__professional">Manage List</button>
+        <ul class="list-container__list">
+          <li>
+            Finish an important task - <span class="item-date">01/11/2021</span>
+          </li>
+          <li>
+            Meeting with a cliente - <span class="item-date">07/11/2021</span>
+          </li>
+          <li>
+            Fix a bug in the code -
+            <span class="item-date">08/11/2021</span>
+          </li>
+          <li>
+            Implement new login screen feature -
+            <span class="item-date">19/11/2021</span>
+          </li>
+        </ul>
+      </div>
+      <div class="study">
+        <h2 class="list-container__title">Study</h2>
+        <button class="manage manage__study">Manage List</button>
+        <ul class="list-container__list">
+          <li>
+            Finish an important task - <span class="item-date">01/11/2021</span>
+          </li>
+          <li>
+            Meeting with a group members -
+            <span class="item-date">07/11/2021</span>
+          </li>
+          <li>
+            Do homework for test -
+            <span class="item-date">08/11/2021</span>
+          </li>
+          <li>
+            Read the book Clen Code -
+            <span class="item-date">27/11/2021</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

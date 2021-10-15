@@ -1,0 +1,96 @@
+.title {
+  margin: 3rem 0 5rem 0;
+  text-align: center;
+
+  &__primary {
+    font-size: 6rem;
+    line-height: 1.6;
+
+    #to {
+      color: $color-tertiary-dark;
+    }
+
+    #do {
+      color: $color-primary-dark;
+    }
+
+    #list {
+      color: $color-secondary-light;
+    }
+  }
+
+  &__secondary {
+    font-size: 2rem;
+    color: $color-main-black;
+    font-weight: 400;
+  }
+}
+
+.input-container {
+  margin: 0 auto;
+  text-align: center;
+
+  label {
+    margin-right: 1rem;
+    font-size: 1.6rem;
+    font-family: inherit;
+    font-weight: bold;
+  }
+
+  .label-date,
+  .category__select {
+    margin-right: 2.53rem;
+  }
+
+  input,
+  select {
+    padding: 0.9rem;
+    font-family: inherit;
+    border: 1.5px solid $color-grey;
+    width: 40rem;
+    margin-bottom: 1.5rem;
+    outline: none;
+  }
+}
+
+.list-container {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1270px;
+  margin: 0 auto 8rem auto;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 2rem;
+  }
+
+  .personal {
+    .list-container__title {
+      color: $color-tertiary-dark;
+    }
+  }
+
+  .professional {
+    .list-container__title {
+      color: $color-primary-dark;
+    }
+  }
+
+  .study {
+    .list-container__title {
+      color: $color-secondary-light;
+    }
+  }
+
+  &__list {
+    li {
+      font-size: 1.4rem;
+      padding: 1.5rem 0 1.5rem 0;
+      border-bottom: 1px solid $color-grey;
+    }
+  }
+}

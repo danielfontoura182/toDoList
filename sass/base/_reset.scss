@@ -13,6 +13,7 @@ html {
 
 body {
   font-family: 'Montserrat', sans-serif;
+  position: relative;
 }
 
 a {
@@ -33,4 +34,9 @@ img {
 button {
   border: none;
   background: none;
+  transition: all 0.2s;
+  font-family: inherit;
+  &:active {
+    transform: scale(0.97);
+  }
 }

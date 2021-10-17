@@ -5,7 +5,8 @@
   text-transform: uppercase;
   font-weight: 700;
   cursor: pointer;
-  margin: 1rem 0 3rem 0;
+  transition: all 0.2s;
+  margin: 1rem 0 4rem 0;
 
   &:active {
     transform: scale(0.97);
@@ -25,7 +26,8 @@
     border: 1px solid $color-tertiary-dark;
     background-color: $color-tertiary-dark;
     color: white;
-    &:hover {
+    &:active {
+      transform: scale(0.97);
     }
   }
 
@@ -33,7 +35,8 @@
     border: 1px solid $color-primary-dark;
     background-color: $color-primary-dark;
     color: white;
-    &:hover {
+    &:active {
+      transform: scale(0.97);
     }
   }
 
@@ -41,7 +44,37 @@
     border: 1px solid $color-secondary-light;
     background-color: $color-secondary-light;
     color: white;
-    &:hover {
+    &:active {
+      transform: scale(0.97);
     }
+  }
+}
+
+.update {
+  padding: 1rem 2rem;
+  background-color: $color-primary-dark;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #21cf95;
+  }
+}
+
+.cancel {
+  padding: 1rem 2rem;
+
+  background-color: crimson;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(255, 0, 51);
   }
 }

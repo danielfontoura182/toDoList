@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/css/main.min.css" />
   </head>
   <body>
+    <!-- TITLE -->
     <div class="title">
       <h1 class="title__primary">
         <span id="to">to</span><span id="do">Do</span
@@ -21,7 +22,7 @@
       </h1>
       <h2 class="title__secondary">Add, Edit, Delete and Check Completed</h2>
     </div>
-
+    <!-- INPUT CONTAINER - ADD TODO-->
     <form class="input-container">
       <div class="todo-item__container">
         <label for="todo-item">Your To Do:</label>
@@ -51,6 +52,7 @@
       </div>
       <button class="add">Add To Do &RightArrow;</button>
     </form>
+    <!-- LIST CONTAINER -->
     <div class="list-container">
       <div class="personal">
         <h2 class="list-container__title">Personal</h2>
@@ -63,7 +65,7 @@
             Play soccer with friends - <span class="item-date">07/11/2021</span>
           </li>
           <li>
-            Go to the cinema with girlfriend -
+            Go to the movies with girlfriend -
             <span class="item-date">08/11/2021</span>
           </li>
         </ul>
@@ -96,7 +98,7 @@
             Finish an important task - <span class="item-date">01/11/2021</span>
           </li>
           <li>
-            Meeting with a group members -
+            Meeting with group members -
             <span class="item-date">07/11/2021</span>
           </li>
           <li>
@@ -104,10 +106,124 @@
             <span class="item-date">08/11/2021</span>
           </li>
           <li>
-            Read the book Clen Code -
+            Read the book Clean Code -
             <span class="item-date">27/11/2021</span>
           </li>
         </ul>
+      </div>
+    </div>
+    <!-- MODAL -->
+    <div class="modal">
+      <div class="modal__container">
+        <span class="close-modal">+</span>
+        <div class="modal__input-container">
+          <h2 class="modal__title">Personal</h2>
+          <ul class="modal__inputs">
+            <li class="modal__item">
+              <input
+                type="text"
+                value="Just a test todo Just a test todo Just a test todo Just a test todo"
+              />
+              <span class="modal__delete">+</span>
+              <span class="modal__check-completed">V</span>
+            </li>
+            <li class="modal__item">
+              <input type="text" value="Just a test todo" />
+              <span class="modal__delete">+</span>
+              <span class="modal__check-completed">V</span>
+            </li>
+            <li class="modal__item">
+              <input type="text" value="Just a test todo" />
+              <span class="modal__delete">+</span>
+              <span class="modal__check-completed">V</span>
+            </li>
+            <li class="modal__item">
+              <input type="text" value="Just a test todo" />
+              <span class="modal__delete">+</span>
+              <span class="modal__check-completed">V</span>
+            </li>
+            <li class="modal__item">
+              <input type="text" value="Just a test todo" />
+              <span class="modal__delete">+</span>
+              <span class="modal__check-completed">V</span>
+            </li>
+            <li class="modal__item">
+              <input type="text" value="Just a test todo" />
+              <span class="modal__delete">+</span>
+              <span class="modal__check-completed">V</span>
+            </li>
+            <li class="modal__item">
+              <input
+                type="text"
+                value="Just a test todo Just a test todo Just a test todo Just a test todo"
+              />
+              <span class="modal__delete">+</span>
+              <span class="modal__check-completed">V</span>
+            </li>
+            <li class="modal__item">
+              <input type="text" value="Just a test todo" />
+              <span class="modal__delete">+</span>
+              <span class="modal__check-completed">V</span>
+            </li>
+            <li class="modal__item">
+              <input type="text" value="Just a test todo" />
+              <span class="modal__delete">+</span>
+              <span class="modal__check-completed">V</span>
+            </li>
+            <li class="modal__item">
+              <input type="text" value="Just a test todo" />
+              <span class="modal__delete">+</span>
+              <span class="modal__check-completed">V</span>
+            </li>
+            <li class="modal__item">
+              <input type="text" value="Just a test todo" />
+              <span class="modal__delete">+</span>
+              <span class="modal__check-completed">V</span>
+            </li>
+            <li class="modal__item">
+              <input type="text" value="Just a test todo" />
+              <span class="modal__delete">+</span>
+              <span class="modal__check-completed">V</span>
+            </li>
+            <li class="modal__item">
+              <input
+                type="text"
+                value="Just a test todo Just a test todo Just a test todo Just a test todo"
+              />
+              <span class="modal__delete">+</span>
+              <span class="modal__check-completed">V</span>
+            </li>
+            <li class="modal__item">
+              <input type="text" value="Just a test todo" />
+              <span class="modal__delete">+</span>
+              <span class="modal__check-completed">V</span>
+            </li>
+            <li class="modal__item">
+              <input type="text" value="Just a test todo" />
+              <span class="modal__delete">+</span>
+              <span class="modal__check-completed">V</span>
+            </li>
+            <li class="modal__item">
+              <input type="text" value="Just a test todo" />
+              <span class="modal__delete">+</span>
+              <span class="modal__check-completed">V</span>
+            </li>
+            <li class="modal__item">
+              <input type="text" value="Just a test todo" />
+              <span class="modal__delete">+</span>
+              <span class="modal__check-completed">V</span>
+            </li>
+            <li class="modal__item">
+              <input type="text" value="Just a test todo" />
+              <span class="modal__delete">+</span>
+              <span class="modal__check-completed">V</span>
+            </li>
+          </ul>
+          <div class="modal__buttons">
+            <button class="update">update</button>
+            <button class="cancel">cancel</button>
+          </div>
+        </div>
       </div>
     </div>
   </body>

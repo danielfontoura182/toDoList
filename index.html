@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/main.min.css" />
-    <script defer src="./js/controller.js"></script>
+    <script defer type="module" src="./js/controller.js"></script>
   </head>
   <body>
     <!-- TITLE -->
@@ -51,11 +51,12 @@
           <option value="study">Study</option>
         </select>
       </div>
-      <button class="add">Add To Do &RightArrow;</button>
+      <button class="add">Add To Do</button>
     </form>
     <!-- LIST CONTAINER -->
+    <div class="list-container"></div>
     <!-- 
-    <div class="list-container">
+    
       <div class="personal">
         <h2 class="list-container__title">Personal</h2>
         <button class="manage manage__personal">Manage List</button>
@@ -113,7 +114,6 @@
           </li>
         </ul>
       </div>
-    </div>
     -->
     <!-- MODAL -->
     <!-- 

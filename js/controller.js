@@ -25,6 +25,7 @@ function addToDo() {
 
   if (!model.state[toDoCategoryValue]) {
     model.addToState(0, toDoItemValue, toDoDateValue, toDoCategoryValue)
+    clearInputs()
     return
   }
 
@@ -38,11 +39,20 @@ function addToDo() {
   console.log(model.state)
 }
 
+function clearInputs() {
+  const toDoItemInput = document.querySelector('.todo-item')
+  const toDoDateInput = document.querySelector('.todo-date')
+
+  toDoItemInput.value = ''
+  toDoDateInput.value = ''
+}
+
 function init() {
   const addToDoBtn = document.querySelector('.add')
   addToDoBtn.addEventListener('click', (e) => {
     e.preventDefault()
     addToDo()
+    clearInputs()
   })
 }
 

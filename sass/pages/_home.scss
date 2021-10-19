@@ -59,6 +59,9 @@
   width: 95%;
   max-width: 1270px;
   margin: 0 auto 8rem auto;
+  @include respond(tablet-port) {
+    flex-wrap: wrap;
+  }
 
   &__title {
     text-align: center;
@@ -69,7 +72,8 @@
   }
 
   &__list {
-    max-width: 600px;
+    max-width: 500px;
+    margin-bottom: 4rem;
   }
 
   .personal {
@@ -92,8 +96,8 @@
 
   &__list {
     li {
-      font-size: 1.4rem;
-      padding: 1.5rem 0 0.5rem 1rem;
+      font-size: 1.3rem;
+      padding: 2rem 0 0.5rem 1rem;
       border-bottom: 1px solid rgba(128, 128, 128, 0.274);
       position: relative;
     }
@@ -110,7 +114,7 @@
   position: absolute;
   font-size: 1rem;
   font-weight: bold;
-  top: 10%;
+  top: 15%;
   right: 0;
 }
 

@@ -13,7 +13,7 @@ class StudyView extends View {
                           ? item.todo.slice(1, 41) + `...`
                           : item.todo
                       } <span class="todo-deadline">(${new Date(
-                        item.date
+                        item.date + ` 00:00:00`
                       ).toLocaleDateString()})</span></li>`
                   )
                   .join('')}

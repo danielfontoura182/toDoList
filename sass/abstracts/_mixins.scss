@@ -18,7 +18,7 @@
   }
 
   @if $breakpoint == tablet-port {
-    @media only screen and (max-width: 57em) {
+    @media only screen and (max-width: 60em) {
       @content;
     }
   }

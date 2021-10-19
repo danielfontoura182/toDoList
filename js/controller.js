@@ -7,30 +7,39 @@ function controlView(category) {
   const currentState = model.state
 
   if (category === 'personal') {
+    personalView._clear()
     personalView.render(currentState)
   }
 
   if (category === 'study') {
+    studyView._clear()
     studyView.render(currentState)
   }
 
   if (category === 'professional') {
+    professionalView._clear()
     professionalView.render(currentState)
   }
 }
 
 function loadFirstView() {
   const currentState = model.state
+  const personalList = document.querySelector('.personal')
+  const professionalList = document.querySelector('.professional')
+  const studyList = document.querySelector('.study')
 
   if (currentState['personal']) {
+    personalList.style.display = 'block'
     personalView.render(currentState)
   }
 
   if (currentState['study']) {
+    studyList.style.display = 'block'
     studyView.render(currentState)
   }
 
   if (currentState['professional']) {
+    professionalList.style.display = 'block'
     professionalView.render(currentState)
   }
 }
@@ -61,8 +70,7 @@ function addToDo() {
   if (!model.state[toDoCategoryValue]) {
     model.addToState(0, toDoItemValue, toDoDateValue, toDoCategoryValue)
     clearInputs()
-    console.log(model.state)
-
+    document.querySelector(`.${toDoCategoryValue}`).style.display = 'block'
     return
   }
 

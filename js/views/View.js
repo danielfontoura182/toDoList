@@ -6,4 +6,8 @@ export default class View {
     const markup = this._generateMarkup()
     this._parentElement.insertAdjacentHTML('beforeend', markup)
   }
+
+  _clear() {
+    this._parentElement.innerHTML = ''
+  }
 }

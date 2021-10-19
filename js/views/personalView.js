@@ -8,9 +8,13 @@ class PersonalView extends View {
                 ${this._data['personal']
                   .map(
                     (item) =>
-                      `<li>${item.todo} - ${new Date(
+                      `<li>${
+                        item.todo.length > 40
+                          ? item.todo.slice(1, 41) + `...`
+                          : item.todo
+                      } <span class="todo-deadline">(${new Date(
                         item.date
-                      ).toLocaleDateString()}</li>`
+                      ).toLocaleDateString()})</span></li>`
                   )
                   .join('')}
             `

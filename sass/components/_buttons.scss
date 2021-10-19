@@ -29,6 +29,12 @@
     &:active {
       transform: scale(0.97);
     }
+
+    &:hover {
+      border: 1px solid $color-tertiary-dark;
+      background-color: white;
+      color: $color-tertiary-dark;
+    }
   }
 
   &__professional {
@@ -38,6 +44,12 @@
     &:active {
       transform: scale(0.97);
     }
+
+    &:hover {
+      border: 1px solid $color-primary-dark;
+      background-color: white;
+      color: $color-primary-dark;
+    }
   }
 
   &__study {
@@ -46,6 +58,12 @@
     color: white;
     &:active {
       transform: scale(0.97);
+    }
+
+    &:hover {
+      border: 1px solid $color-secondary-light;
+      background-color: white;
+      color: $color-secondary-light;
     }
   }
 }

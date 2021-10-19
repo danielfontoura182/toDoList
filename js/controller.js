@@ -26,6 +26,8 @@ function addToDo() {
   if (!model.state[toDoCategoryValue]) {
     model.addToState(0, toDoItemValue, toDoDateValue, toDoCategoryValue)
     clearInputs()
+    console.log(model.state)
+
     return
   }
 
@@ -47,11 +49,17 @@ function clearInputs() {
   toDoDateInput.value = ''
 }
 
+function updateLocalStorage() {
+  localStorage.setItem('list', JSON.stringify(model.state))
+}
+
 function init() {
+  console.log(model.state)
   const addToDoBtn = document.querySelector('.add')
   addToDoBtn.addEventListener('click', (e) => {
     e.preventDefault()
     addToDo()
+    updateLocalStorage()
     clearInputs()
   })
 }

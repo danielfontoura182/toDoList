@@ -1,4 +1,39 @@
 import * as model from './model.js'
+import personalView from './views/personalView.js'
+import studyView from './views/studyView.js'
+import professionalView from './views/professionalView.js'
+
+function controlView(category) {
+  const currentState = model.state
+
+  if (category === 'personal') {
+    personalView.render(currentState)
+  }
+
+  if (category === 'study') {
+    studyView.render(currentState)
+  }
+
+  if (category === 'professional') {
+    professionalView.render(currentState)
+  }
+}
+
+function loadFirstView() {
+  const currentState = model.state
+
+  if (currentState['personal']) {
+    personalView.render(currentState)
+  }
+
+  if (currentState['study']) {
+    studyView.render(currentState)
+  }
+
+  if (currentState['professional']) {
+    professionalView.render(currentState)
+  }
+}
 
 function addToDo() {
   const toDoItemValue = document.querySelector('.todo-item').value
@@ -55,11 +90,15 @@ function updateLocalStorage() {
 
 function init() {
   console.log(model.state)
+
+  loadFirstView()
+
   const addToDoBtn = document.querySelector('.add')
   addToDoBtn.addEventListener('click', (e) => {
     e.preventDefault()
     addToDo()
     updateLocalStorage()
+    controlView(document.getElementById('category__select').value)
     clearInputs()
   })
 }

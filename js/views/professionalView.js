@@ -1,15 +1,15 @@
 import View from './View.js'
 
-class PersonalView extends View {
+class ProfessionalView extends View {
   _parentElement = document.querySelector('.list-container')
 
   _generateMarkup() {
     return `
-        <div class="list-container__list personal">
-            <h2 class="list-container__title">Personal</h2>
-            <button class="manage manage__personal">Manage List</button>
+        <div class="list-container__list professional">
+            <h2 class="list-container__title">Professional</h2>
+            <button class="manage manage__professional">Manage List</button>
             <ul class="list-container__list">
-                ${this._data['personal']
+                ${this._data['professional']
                   .map(
                     (item) =>
                       `<li>${item.todo} - ${new Date(
@@ -23,4 +23,4 @@ class PersonalView extends View {
   }
 }
 
-export default new PersonalView()
+export default new ProfessionalView()

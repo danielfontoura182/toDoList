@@ -44,6 +44,13 @@ function loadFirstView() {
   }
 }
 
+function controlModalView(category) {
+  if (category === 'personal') {
+    return
+  }
+  return
+}
+
 function addToDo() {
   const toDoItemValue = document.querySelector('.todo-item').value
   const toDoDateValue = document.querySelector('.todo-date').value
@@ -102,12 +109,29 @@ function init() {
   loadFirstView()
 
   const addToDoBtn = document.querySelector('.add')
+
+  const managePersonalList = document.querySelector('.manage__persoonal')
+  const manageProfessionalList = document.querySelector('.manage__professional')
+  const manageAcademicList = document.querySelector('.manage__study')
+
   addToDoBtn.addEventListener('click', (e) => {
     e.preventDefault()
     addToDo()
     updateLocalStorage()
     controlView(document.getElementById('category__select').value)
     clearInputs()
+  })
+
+  managePersonalList.addEventListener('click', () => {
+    controlModalView('personal')
+  })
+
+  manageProfessionalList.addEventListener('click', () => {
+    controlModalView('professional')
+  })
+
+  manageAcademicList.addEventListener('click', () => {
+    controlModalView('academic')
   })
 }
 

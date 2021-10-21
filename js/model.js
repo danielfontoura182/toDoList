@@ -1,10 +1,14 @@
 export const state = JSON.parse(localStorage.getItem('list')) || {}
 
-export function addToState(id, todo, date, category) {
+export function addToState(id, todo, date, category, completed = false) {
   if (state[category]) {
-    state[category].push({ id, todo, date })
+    state[category].push({ id, todo, date, completed })
     return
   }
 
-  state[category] = [{ id, todo: todo, date: date }]
+  state[category] = [{ id, todo: todo, date: date, completed: completed }]
+}
+
+export function updateState(updatedToDoList, category) {
+  state[category] = updatedToDoList
 }

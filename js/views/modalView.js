@@ -15,8 +15,9 @@ class ModalView extends View {
               ${this._data
                 .map((item) => {
                   return `
-                <li class="modal__item">
+                <li data-id="${item.id}" class="modal__item">
                     <input type="text" value="${item.todo}" />
+                    <input class="modal__date" type="date" value="${item.date}" />
                     <span class="modal__delete" data-id="${item.id}">+</span>
                     <span class="modal__check-completed" data-id="${item.id}">V</span>
                 </li>

@@ -47,6 +47,36 @@ function loadFirstView() {
 
 function controlModalView(category) {
   modalView.render(model.state[category], category)
+  const modal = document.querySelector('.modal')
+
+  modal.addEventListener('click', (e) => {
+    if (
+      e.target.classList.contains('modal') ||
+      e.target.classList.contains('close-modal') ||
+      e.target.classList.contains('cancel')
+    ) {
+      modal.remove()
+      return
+    }
+
+    if (e.target.classList.contains('.update')) {
+      const updatedToDoList = []
+      const category = document
+        .querySelector('.modal__title')
+        .innerHTML.toLowerCase()
+
+      document.querySelectorAll('.modal__item').forEach((item) => {
+        updatedToDoList.push({
+          id: item.dataset.id,
+          todo: item.value,
+          date: document.querySelector(
+            `.modal__date[data-id="${item.dataset.id}"]`
+          ),
+          completed: model.state[category][+item.dataset].completed,
+        })
+      })
+    }
+  })
 }
 
 function addToDo() {

@@ -10,7 +10,7 @@ class ProfessionalView extends View {
                     (item) =>
                       `<li>${
                         item.todo.length > 40
-                          ? item.todo.slice(1, 41) + `...`
+                          ? item.todo.slice(0, 41) + `...`
                           : item.todo
                       } <span class="todo-deadline">(${new Date(
                         item.date + ` 00:00:00`

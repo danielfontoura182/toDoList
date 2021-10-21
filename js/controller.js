@@ -1,7 +1,8 @@
 import * as model from './model.js'
 import personalView from './views/personalView.js'
-import studyView from './views/studyView.js'
+import academicView from './views/academicView.js'
 import professionalView from './views/professionalView.js'
+import modalView from './views/modalView.js'
 
 function controlView(category) {
   const currentState = model.state
@@ -11,9 +12,9 @@ function controlView(category) {
     personalView.render(currentState)
   }
 
-  if (category === 'study') {
-    studyView._clear()
-    studyView.render(currentState)
+  if (category === 'academic') {
+    academicView._clear()
+    academicView.render(currentState)
   }
 
   if (category === 'professional') {
@@ -26,16 +27,16 @@ function loadFirstView() {
   const currentState = model.state
   const personalList = document.querySelector('.personal')
   const professionalList = document.querySelector('.professional')
-  const studyList = document.querySelector('.study')
+  const academicList = document.querySelector('.academic')
 
   if (currentState['personal']) {
     personalList.style.display = 'block'
     personalView.render(currentState)
   }
 
-  if (currentState['study']) {
-    studyList.style.display = 'block'
-    studyView.render(currentState)
+  if (currentState['academic']) {
+    academicList.style.display = 'block'
+    academicView.render(currentState)
   }
 
   if (currentState['professional']) {
@@ -45,10 +46,7 @@ function loadFirstView() {
 }
 
 function controlModalView(category) {
-  if (category === 'personal') {
-    return
-  }
-  return
+  modalView.render(model.state[category], category)
 }
 
 function addToDo() {
@@ -110,9 +108,9 @@ function init() {
 
   const addToDoBtn = document.querySelector('.add')
 
-  const managePersonalList = document.querySelector('.manage__persoonal')
+  const managePersonalList = document.querySelector('.manage__personal')
   const manageProfessionalList = document.querySelector('.manage__professional')
-  const manageAcademicList = document.querySelector('.manage__study')
+  const manageAcademicList = document.querySelector('.manage__academic')
 
   addToDoBtn.addEventListener('click', (e) => {
     e.preventDefault()

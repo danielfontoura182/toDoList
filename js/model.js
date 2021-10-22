@@ -12,3 +12,7 @@ export function addToState(id, todo, date, category, completed = false) {
 export function updateState(updatedToDoList, category) {
   state[category] = updatedToDoList
 }
+
+export function deleteToDo(category, id) {
+  state[category].splice(+id, +id + 1)
+}

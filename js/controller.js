@@ -29,17 +29,20 @@ function loadFirstView() {
   const professionalList = document.querySelector('.professional')
   const academicList = document.querySelector('.academic')
 
-  if (currentState['personal']) {
+  if (currentState['personal'] && model.state['personal'].length !== 0) {
     personalList.style.display = 'block'
     personalView.render(currentState)
   }
 
-  if (currentState['academic']) {
+  if (currentState['academic'] && model.state['academic'].length !== 0) {
     academicList.style.display = 'block'
     academicView.render(currentState)
   }
 
-  if (currentState['professional']) {
+  if (
+    currentState['professional'] &&
+    model.state['professional'].length !== 0
+  ) {
     professionalList.style.display = 'block'
     professionalView.render(currentState)
   }
@@ -60,9 +63,6 @@ function controlModalView(category) {
 
     if (e.target.classList.contains('update')) {
       const updatedToDoList = []
-      const category = document
-        .querySelector('.modal__title')
-        .innerHTML.toLowerCase()
 
       document.querySelectorAll('.modal__item').forEach((item, idx) => {
         updatedToDoList.push({
@@ -83,6 +83,24 @@ function controlModalView(category) {
       modal.remove()
       return
     }
+
+    if (e.target.classList.contains('modal__delete')) {
+      if (window.confirm('Do you want to remove this toDo item?')) {
+        model.deleteToDo(category, e.target.dataset.id)
+        document
+          .querySelector(`.modal__item[data-id="${e.target.dataset.id}"]`)
+          .remove()
+
+        updateLocalStorage()
+        controlView(category)
+
+        if (model.state[category].length === 0) {
+          document.querySelector(`.${category}`).style.display = 'none'
+        }
+
+        return
+      }
+    }
   })
 }
 
@@ -101,18 +119,11 @@ function addToDo() {
     return
   }
 
-  if (new Date(toDoDateValue) - new Date() < 0) {
-    if (
-      !confirm('The deadline date is a previous date. Do you want to continue?')
-    ) {
-      return
-    }
-  }
-
   if (!model.state[toDoCategoryValue]) {
     model.addToState(0, toDoItemValue, toDoDateValue, toDoCategoryValue)
     clearInputs()
     document.querySelector(`.${toDoCategoryValue}`).style.display = 'block'
+
     return
   }
 
@@ -122,6 +133,8 @@ function addToDo() {
     toDoDateValue,
     toDoCategoryValue
   )
+
+  document.querySelector(`.${toDoCategoryValue}`).style.display = 'block'
 
   console.log(model.state)
 }

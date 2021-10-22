@@ -51,7 +51,6 @@ function controlModalView(category) {
 
   modal.addEventListener('click', (e) => {
     if (
-      e.target.classList.contains('modal') ||
       e.target.classList.contains('close-modal') ||
       e.target.classList.contains('cancel')
     ) {
@@ -59,22 +58,30 @@ function controlModalView(category) {
       return
     }
 
-    if (e.target.classList.contains('.update')) {
+    if (e.target.classList.contains('update')) {
       const updatedToDoList = []
       const category = document
         .querySelector('.modal__title')
         .innerHTML.toLowerCase()
 
-      document.querySelectorAll('.modal__item').forEach((item) => {
+      document.querySelectorAll('.modal__item').forEach((item, idx) => {
         updatedToDoList.push({
           id: item.dataset.id,
-          todo: item.value,
+          todo: document.querySelector(
+            `.item__todo[data-id="${item.dataset.id}"]`
+          ).value,
           date: document.querySelector(
             `.modal__date[data-id="${item.dataset.id}"]`
-          ),
-          completed: model.state[category][+item.dataset].completed,
+          ).value,
+          completed: model.state[category][idx].completed,
         })
       })
+
+      model.updateState(updatedToDoList, category)
+      updateLocalStorage()
+      controlView(category)
+      modal.remove()
+      return
     }
   })
 }

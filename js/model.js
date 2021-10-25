@@ -16,3 +16,7 @@ export function updateState(updatedToDoList, category) {
 export function deleteToDo(category, id) {
   state[category].splice(+id, +id + 1)
 }
+
+export function controlCompleted(category, id) {
+  state[category][+id].completed = !state[category][+id].completed
+}

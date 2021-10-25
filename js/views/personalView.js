@@ -8,7 +8,7 @@ class PersonalView extends View {
                 ${this._data['personal']
                   .map(
                     (item) =>
-                      `<li>${
+                      `<li class="${item.completed ? 'completed' : ''}">${
                         item.todo.length > 40
                           ? item.todo.slice(0, 41) + `...`
                           : item.todo

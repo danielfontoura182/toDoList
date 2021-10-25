@@ -8,7 +8,7 @@ class academicView extends View {
                 ${this._data['academic']
                   .map(
                     (item) =>
-                      `<li>${
+                      `<li class="${item.completed ? 'completed' : ''}">${
                         item.todo.length > 40
                           ? item.todo.slice(0, 41) + `...`
                           : item.todo

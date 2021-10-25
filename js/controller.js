@@ -96,10 +96,19 @@ function controlModalView(category) {
 
         if (model.state[category].length === 0) {
           document.querySelector(`.${category}`).style.display = 'none'
+          modal.remove()
         }
 
         return
       }
+    }
+
+    if (e.target.classList.contains('modal__check-completed')) {
+      model.controlCompleted(category, e.target.dataset.id)
+      document
+        .querySelector(`.item__todo[data-id="${e.target.dataset.id}"]`)
+        .classList.toggle('completed')
+      return
     }
   })
 }

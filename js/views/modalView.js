@@ -11,15 +11,21 @@ class ModalView extends View {
             <span class="close-modal">+</span>
             <div class="modal__input-container">
             <h2 class="modal__title">${category}</h2>
-            <ul class="modal__inputs">
+            <ul class="modal__inputs">  
               ${this._data
                 .map((item) => {
                   return `
                 <li data-id="${item.id}" class="modal__item">
-                    <input class="item__todo" type="text" value="${item.todo}" data-id="${item.id}" />
-                    <input class="modal__date" type="date" value="${item.date}" data-id="${item.id}" />
+                    <input  class="item__todo ${
+                      item.completed ? 'completed' : ''
+                    }" type="text" value="${item.todo}" data-id="${item.id}" />
+                    <input class="modal__date" type="date" value="${
+                      item.date
+                    }" data-id="${item.id}" />
                     <span class="modal__delete" data-id="${item.id}">+</span>
-                    <span class="modal__check-completed" data-id="${item.id}">V</span>
+                    <span class="modal__check-completed" data-id="${
+                      item.id
+                    }">V</span>
                 </li>
                 `
                 })

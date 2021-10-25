@@ -8,7 +8,7 @@ class ProfessionalView extends View {
                 ${this._data['professional']
                   .map(
                     (item) =>
-                      `<li>${
+                      `<li class="${item.completed ? 'completed' : ''}">${
                         item.todo.length > 40
                           ? item.todo.slice(0, 41) + `...`
                           : item.todo

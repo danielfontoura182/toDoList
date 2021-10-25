@@ -16,8 +16,8 @@ class ModalView extends View {
                 .map((item) => {
                   return `
                 <li data-id="${item.id}" class="modal__item">
-                    <input  class="item__todo ${
-                      item.completed ? 'completed' : ''
+                    <input id="item__todo" ${
+                      item.completed ? 'class="completed"' : 'class=""'
                     }" type="text" value="${item.todo}" data-id="${item.id}" />
                     <input class="modal__date" type="date" value="${
                       item.date

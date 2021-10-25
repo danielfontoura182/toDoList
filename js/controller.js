@@ -48,6 +48,8 @@ function loadFirstView() {
   }
 }
 
+function updateStateAfterModal() {}
+
 function controlModalView(category) {
   modalView.render(model.state[category], category)
   const modal = document.querySelector('.modal')
@@ -68,12 +70,14 @@ function controlModalView(category) {
         updatedToDoList.push({
           id: item.dataset.id,
           todo: document.querySelector(
-            `.item__todo[data-id="${item.dataset.id}"]`
+            `#item__todo[data-id="${item.dataset.id}"]`
           ).value,
           date: document.querySelector(
             `.modal__date[data-id="${item.dataset.id}"]`
           ).value,
-          completed: model.state[category][idx].completed,
+          completed: document
+            .querySelector(`#item__todo[data-id="${item.dataset.id}"]`)
+            .classList.contains('completed'),
         })
       })
 
@@ -104,10 +108,10 @@ function controlModalView(category) {
     }
 
     if (e.target.classList.contains('modal__check-completed')) {
-      model.controlCompleted(category, e.target.dataset.id)
       document
-        .querySelector(`.item__todo[data-id="${e.target.dataset.id}"]`)
+        .querySelector(`#item__todo[data-id="${e.target.dataset.id}"]`)
         .classList.toggle('completed')
+
       return
     }
   })

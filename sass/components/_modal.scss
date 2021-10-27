@@ -44,16 +44,30 @@
     display: flex;
     align-items: center;
 
+    flex-wrap: wrap;
+
     input {
       width: 60%;
       border: 2px solid $color-grey;
       padding: 1rem;
+
+      @include respond(tablet-port) {
+        width: 75%;
+      }
     }
 
     .modal__date {
       padding: 0.75rem;
       width: 30%;
       border-left: none;
+
+      @include respond(tablet-port) {
+        order: 3;
+        width: 50%;
+        border-left: 2px solid $color-grey;
+        margin-top: -0.3rem;
+        margin-bottom: 2rem;
+      }
     }
   }
 
